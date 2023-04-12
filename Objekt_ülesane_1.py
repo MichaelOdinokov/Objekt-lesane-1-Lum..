@@ -44,7 +44,6 @@ polygon=pygame.Rect(290,80,20,40)
 pygame.draw.ellipse(ekraani_pind,(252,252,10),polygon)
 
 
-
 pygame.display.flip()
 while True:
     event=pygame.event.poll()# poll - proverjaet sobitija
