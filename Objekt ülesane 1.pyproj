@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1dcd1d9-647c-4e25-addd-b17cfa33a600</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>osa_2.py</StartupFile>
+    <StartupFile>animerimine1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,9 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="animerimine1.py" />
     <Compile Include="Objekt_ülesane_1.py" />
     <Compile Include="osa_2.py" />
     <Compile Include="ü2.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="snoopy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
