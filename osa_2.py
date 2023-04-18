@@ -7,6 +7,16 @@ def Maja(x,y,laius,kõrgus,pind,värv):
     
     pygame.draw.lines(pind,värv,False,point,suurus)
 
+def Uks(x,y,laius,kõrgus,pind,värv):
+    point=[(x,y),(x,y-(1/2)*kõrgus),(x+(1/3)*laius,y-(1/2)*kõrgus),(x+(1/3)*laius,y),(x,y)]
+    suurus=random.randint(1,10)
+    pygame.draw.lines(pind,värv,False,point,suurus)
+
+def Aken(x,y,laius,kõrgus,pind,värv):
+    point=[(x,y),(x,y-(1/2)*kõrgus),(x+(3/4)*laius,y-(1/2)*kõrgus),(x+(3/4)*laius,y),(x,y)]
+    suurus=random.randint(1,10)
+    pygame.draw.lines(pind,värv,False,point,suurus)
+
 pygame.init()
 pind=pygame.display.set_mode((640,480))
 pygame.display.set_caption("Maa objektid - Michael Odinokov")# set_caption
@@ -24,8 +34,6 @@ b=random.randint(0,255)
 
 majavärv=[r,g,b]
 
-
-
 suurus=random.randint(1,10)
 pind.fill(fon)
 
@@ -33,14 +41,15 @@ pind.fill(fon)
 ristkülik=pygame.Rect(0,400,640,180)
 pygame.draw.rect(pind,(10,233,40),ristkülik)
 
-#Uks
-uks=pygame.Rect(200,200,100,100)
-pygame.draw.rect(pind,(255,0,0),uks)
+
+
+#uks pointõ
+ovaal1=pygame.Rect(170,280,20,20)
+pygame.draw.ellipse(pind,(252,252,252),ovaal1)
 
 Maja(100,400,300,400,pind,majavärv)
-
-
-
+Uks(100,400,300,400,pind,majavärv)
+Aken(100,400,300,400,pind,majavärv)
 for i in range(10):
     r=random.randint(0,255)
     g=random.randint(0,255)
