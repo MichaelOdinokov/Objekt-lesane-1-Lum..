@@ -17,12 +17,20 @@ Y=480
 ekraan=pygame.display.set_mode([X,Y])
 pygame.display.set_caption("Maa objektid - Michael Odinokov")# set_caption
 ekraan.fill(roheline)
+
 kell=pygame.time.Clock()
 pilt=pygame.image.load("snoopy.png")
-posX=X-78
-posY=Y-100
+
+posX=X-pilt.get_rect().width
+posY=Y-pilt.get_rect().height
+
+posX1=X+pilt.get_rect().width
+posY1=Y+pilt.get_rect().height
+
+
 lõpp=False
-samm=2
+sammX=2
+sammY=0
 while not lõpp:
     kell.tick(60)
     events=pygame.event.get()
@@ -30,8 +38,24 @@ while not lõpp:
         if i.type==pygame.QUIT():
             sys.exit()
     ekraan.blit(pilt,(posX,posY))
-    posX-=samm
+
+    if posX>X-pilt.get_rect().width or posX<0:        
+        sammX=-sammX
+    if posY>Y-pilt.get_rect().width or posY<170:
+        sammY=-sammY
+    if posX<0:
+        sammY=2
+        sammX=0
+        posY=sammY
+
+
+    posX-=sammX
+    posY-=sammY
+    
+        
+            
     pygame.display.flip()
+    ekraan.fill(roheline)
 pygame.quit()
 
 
