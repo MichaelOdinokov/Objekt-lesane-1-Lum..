@@ -1,40 +1,48 @@
 import pygame
 import random
 import sys
-
-def K():
+"""
+def K():#По часовой стрелке
     if posX==0 and posY==0:
         sammX=1
         sammY=0
-    if posX==X-pilt.get_rect().width and posY<=Y-pilt.get_rect().height:
+    if posX==X-pilt.get_rect().width and posY==0:
         sammX=0
         sammY=1
     if posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
-        sammX=1
+        sammX=-1
         sammY=0
-        sammX=-sammX
-    if posX==0 and posY>=Y-pilt.get_rect().height:
+    if posX==0 and posY==Y-pilt.get_rect().height:
         sammX=0
-        sammY=1
-        sammY=-sammY
+        sammY=-1
     posX+=sammX
     posY+=sammY
 
-def K180():
+def K180():#против часовой
+    if posX==0 and posY==Y-pilt.get_rect().height:
+        sammX=1  
+        sammY=0
+    if posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
+        sammX=0
+        sammY=-1
+    if posX==X-pilt.get_rect().width and posY==0:
+        sammX=-1
+        sammY=0
     if posX==0 and posY==0:
         sammX=0
         sammY=1
-    if posX>=X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
-        sammX=-1
-        sammY=0
-    if posX==X-pilt.get_rect().width and posY>=Y-pilt.get_rect().height:
-        sammX=0
-        sammY=-1
-    if posX<=0 and posY==0:
-        sammX=1
-        sammY=0
+
     posX+=sammX
     posY+=sammY
+
+def R():#талкивается от кроёв
+    posX=random.randint(0,X-pilt.get_rect().width)
+    posY=random.randint(0,Y-pilt.get_rect().height)
+    if posY<=0 or posY>=Y-pilt.get_rect().height:
+        sammY=-sammY
+    if posX<=0 or posX>=X-pilt.get_rect().width:
+        sammX=-sammX 
+"""
 
 pygame.init()
 pind=pygame.display.set_mode((640,480))
@@ -71,20 +79,29 @@ while not lõpp:
     for i in pygame.event.get():
         if i.type==pygame.QUIT():
             sys.exit()
-    ekraan.blit(pilt,(posX,posY))    
-    
-    if posX>=X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
-        sammX=-1
-        sammY=0
-    if posX==X-pilt.get_rect().width and posY>=Y-pilt.get_rect().height:
-        sammX=0
-        sammY=-1
-    if posX<=0 and posY==0:
-        
-        sammY=-1
+    ekraan.blit(pilt,(posX,posY))
+    if posX <= 0:
+        sammX = 1  # изменяем направление движения по X на положительное (вправо)
+    if posY <= 0:
+        sammY = 1  # изменяем направление движения по Y на положительное (вниз)
+    if posX >= X - pilt.get_rect().width:
+        sammX = -1  # изменяем направление движения по X на отрицательное (влево)
+    if posY >= Y - pilt.get_rect().height:
+        sammY = -1  # изменяем направление движения по Y на отрицательное (вверх)
 
-    posX+=sammX
-    posY+=sammY            
+    posX += sammX
+    posY += sammY
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
     pygame.display.flip()
     ekraan.fill(roheline)
 pygame.quit()
