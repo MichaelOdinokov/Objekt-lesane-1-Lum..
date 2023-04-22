@@ -1,7 +1,7 @@
 import pygame
 import random
 import sys
-"""
+
 def K():#По часовой стрелке
     if posX==0 and posY==0:
         sammX=1
@@ -35,14 +35,27 @@ def K180():#против часовой
     posX+=sammX
     posY+=sammY
 
-def R():#талкивается от кроёв
+def R():#оалкивается от кроёв
     posX=random.randint(0,X-pilt.get_rect().width)
     posY=random.randint(0,Y-pilt.get_rect().height)
     if posY<=0 or posY>=Y-pilt.get_rect().height:
         sammY=-sammY
     if posX<=0 or posX>=X-pilt.get_rect().width:
-        sammX=-sammX 
-"""
+        sammX=-sammX
+
+def YX():
+    if posX<=0:
+        sammX=1
+    if posY<=0:
+        sammY=1
+    if posX>=X-pilt.get_rect().width:
+        sammX=-1
+    if posY>=Y-pilt.get_rect().height:
+        sammY=-1
+
+    posX+=sammX
+    posY+=sammY
+
 
 pygame.init()
 pind=pygame.display.set_mode((640,480))
@@ -80,28 +93,10 @@ while not lõpp:
         if i.type==pygame.QUIT():
             sys.exit()
     ekraan.blit(pilt,(posX,posY))
-    if posX <= 0:
-        sammX = 1  # изменяем направление движения по X на положительное (вправо)
-    if posY <= 0:
-        sammY = 1  # изменяем направление движения по Y на положительное (вниз)
-    if posX >= X - pilt.get_rect().width:
-        sammX = -1  # изменяем направление движения по X на отрицательное (влево)
-    if posY >= Y - pilt.get_rect().height:
-        sammY = -1  # изменяем направление движения по Y на отрицательное (вверх)
-
-    posX += sammX
-    posY += sammY
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
+    K
+    K180
+    R
+    YX
     pygame.display.flip()
     ekraan.fill(roheline)
 pygame.quit()
