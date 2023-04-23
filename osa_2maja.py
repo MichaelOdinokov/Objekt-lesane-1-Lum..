@@ -13,7 +13,7 @@ def Uks(x,y,laius,kõrgus,pind,värv):
     pygame.draw.lines(pind,värv,False,point,suurus)
 
 def Aken(x,y,laius,kõrgus,pind,värv):
-    punktid=[(x,y),(x,y-kõrgus),(x+laius,y-kõrgus),(x+laius,y),(x,y)]
+    punktid=[(x,y),(x,y-(1/4)*kõrgus),(x+(1/4)*laius,y-(1/4)*kõrgus),(x+(1/4)*laius,y),(x,y)]
     suurus=random.randint(1,10)
     pygame.draw.lines(pind,värv,True,punktid,suurus)
 
