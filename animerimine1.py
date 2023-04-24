@@ -93,10 +93,9 @@ while not lõpp:
         if i.type==pygame.QUIT():
             sys.exit()
     ekraan.blit(pilt,(posX,posY))
-    K
-    K180
-    R
-    YX
+ # Выбор случайной функции
+    valitud_funktsioon = random.choice(K,K180,R,YX)
+    valitud_funktsioon()  # Вызов выбранной функции
     pygame.display.flip()
     ekraan.fill(roheline)
 pygame.quit()

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1dcd1d9-647c-4e25-addd-b17cfa33a600</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Game_ulesane2.py</StartupFile>
+    <StartupFile>animerimine1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
