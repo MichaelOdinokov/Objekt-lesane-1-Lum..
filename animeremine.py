@@ -80,15 +80,14 @@ posY=Y-pilt.get_rect().height
 posX1=X+pilt.get_rect().width
 posY1=Y+pilt.get_rect().height
 
-v=[K,K180,R,YX]
-v_list=v
+
 
 while  not lõpp:
     kell.tick(120)
     events=pygame.event.get()
     for i in pygame.event.get():       
         if i.type==pygame.QUIT:
-            random.choice(v)
+            random.shuffel(K(),K180(),R(),YX())
         exit.sys()
     ekraan.blit(pilt,(posX,posY))
     pygame.display.flip()
