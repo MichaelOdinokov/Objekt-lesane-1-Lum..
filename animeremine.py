@@ -2,37 +2,41 @@
 from random import*
 import sys
 
-def K(posX,posY,sammX,sammY):#По часовой стрелке
+def Päripäeva(posX,posY,sammX,sammY):#По часовой
     if posX==0 and posY==0:
         sammX=1
         sammY=0
-    if posX==X-pilt.get_rect().width and posY==0:
+    elif posX==X-pilt.get_rect().width and posY==0:
         sammX=0
         sammY=1
-    if posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
+    elif posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
         sammX=-1
         sammY=0
-    if posX==0 and posY==Y-pilt.get_rect().height:
+    elif posX==0 and posY==Y-pilt.get_rect().height:
         sammX=0
         sammY=-1
     posX+=sammX
     posY+=sammY
+    return posX, posY, sammX, sammY
 
-def K180(posX,posY,sammX,sammY):#против часовой
+
+def Vastupäeva(posX,posY,sammX,sammY):#Против часовой
     if posX==0 and posY==Y-pilt.get_rect().height:
         sammX=1  
         sammY=0
-    if posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
+    elif posX==X-pilt.get_rect().width and posY==Y-pilt.get_rect().height:
         sammX=0
         sammY=-1
-    if posX==X-pilt.get_rect().width and posY==0:
+    elif posX==X-pilt.get_rect().width and posY==0:
         sammX=-1
         sammY=0
-    if posX==0 and posY==0:
+    elif posX==0 and posY==0:
         sammX=0
         sammY=1
     posX+=sammX
     posY+=sammY
+    return posX, posY, sammX, sammY
+
 
 def R(posX,posY,sammX,sammY):#оталкивается от кроёв
     posX=random.randint(0,X-pilt.get_rect().width)
@@ -42,7 +46,7 @@ def R(posX,posY,sammX,sammY):#оталкивается от кроёв
     if posX<=0 or posX>=X-pilt.get_rect().width:
         sammX=-sammX
 
-def YX(posX,posY,sammX,sammY):
+def YX(posX,posY,sammX,sammY): #вверх ввниз
     if posX<=0:
         sammX=1
     if posY<=0:
@@ -53,6 +57,9 @@ def YX(posX,posY,sammX,sammY):
         sammY=-1
     posX+=sammX
     posY+=sammY
+    return posX, posY, sammX, sammY
+
+
 
 lõpp=False
 sammX=2
@@ -81,14 +88,24 @@ posX1=X+pilt.get_rect().width
 posY1=Y+pilt.get_rect().height
 
 
+v=[Vastupäeva,Päripäeva,R,YX]
+v_list=v
 
 while  not lõpp:
     kell.tick(120)
     events=pygame.event.get()
     for i in pygame.event.get():       
         if i.type==pygame.QUIT:
-            random.shuffel(K(),K180(),R(),YX())
-        exit.sys()
+             lõpp=True
+        funktsioon=random.shuffel(v)
+        if funktsioon==Päripäeva:
+            Päripäeva(posX,posY,sammX,sammY)
+        elif funktsioon==Vastupäeva:
+            Vastupäeva(posX,posY,sammX,sammY)
+        elif funktsioon==Random:
+            Random(posX,posY,sammX,sammY)
+        elif funktsioon ==YX:
+            YX(posX,posY,sammX,sammY)        
     ekraan.blit(pilt,(posX,posY))
     pygame.display.flip()
     ekraan.fill(roheline)

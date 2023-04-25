@@ -12,12 +12,20 @@ pygame.draw.rect(pind,(102,0,0),ristkülik)
 
 ristkülik=pygame.Rect(0,200,640,150)
 pygame.draw.rect(pind,(128,128,128),ristkülik)
+
 pilt=pygame.image.load("pika.png")
 pind.blit(pilt,(100, 100))
 
-font=pygame.font.Font(None,36)
+pilt=pygame.image.load("B.png")
+pind.blit(pilt,(500, 20,))
+
+pilt=pygame.image.load("O.png")
+pind.blit(pilt,(230, 20))
+
+font=pygame.font.Font(None,25)
 tekst=font.render("Hello, Michael!", True, (0,0,0)) 
-pind.blit(tekst, (240,80))
+pind.blit(tekst, (270,40))
+
 
 pygame.display.flip()
 while True:

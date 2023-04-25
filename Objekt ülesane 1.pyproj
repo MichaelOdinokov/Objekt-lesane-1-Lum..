@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1dcd1d9-647c-4e25-addd-b17cfa33a600</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>animeremine.py</StartupFile>
+    <StartupFile>Game_ulesane2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,12 +22,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="animeremine.py" />
+    <Compile Include="Game.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Game_ulesane2.py" />
     <Compile Include="Objekt_ülesane_1_Lummemes.py" />
     <Compile Include="osa_2maja.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="12.png" />
+    <Content Include="B.png" />
+    <Content Include="O.png" />
     <Content Include="pika.png" />
     <Content Include="pika2.png" />
   </ItemGroup>
