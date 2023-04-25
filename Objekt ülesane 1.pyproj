@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1dcd1d9-647c-4e25-addd-b17cfa33a600</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>animerimine1.py</StartupFile>
+    <StartupFile>animeremine.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="animerimine1.py" />
+    <Compile Include="animeremine.py" />
     <Compile Include="Game_ulesane2.py" />
     <Compile Include="Objekt_ülesane_1_Lummemes.py" />
     <Compile Include="osa_2maja.py" />

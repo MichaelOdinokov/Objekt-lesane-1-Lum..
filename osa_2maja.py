@@ -64,9 +64,6 @@ for i in range(10):
     y=random.randint(0,450-kõrgus)
     pygame.draw.rect(pind, varv,[x,y,laius,kõrgus])
 
-
-
-
 pygame.display.flip()
 while True:
     event=pygame.event.poll()# poll - proverjaet sobitija
