@@ -48,9 +48,9 @@ pygame.draw.rect(pind,(10,233,40),ristkülik)
 ovaal1=pygame.Rect(170,280,20,20)
 pygame.draw.ellipse(pind,(252,252,252),ovaal1)
 
-Maja(100,400,300,400,pind,majavärv)
+Maja(100,400,600,400,pind,majavärv)
 Uks(100,400,300,400,pind,majavärv)
-Aken(100,400,300,400,pind,majavärv)
+Aken(280,300,300,400,pind,majavärv)
 for i in range(10):
     r=random.randint(0,255)
     g=random.randint(0,255)

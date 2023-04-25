@@ -22,11 +22,33 @@ pygame.draw.ellipse(ekraani_pind,(0,0,0),ovaal4)
 
 ovaal5=pygame.Rect(292,130,10,10)
 pygame.draw.ellipse(ekraani_pind,(0,0,0),ovaal5)
+#päike
+
+
+kollane=[255,255,0]
+joon=pygame.Rect(20,20,100,100)
+pygame.draw.line(ekraani_pind,kollane,(20,20),(100,150),5)
+
+kollane=[255,255,0]
+joon=pygame.Rect(20,20,100,100)
+pygame.draw.line(ekraani_pind,kollane,(50,50),(200,10),5)
+
+kollane=[255,255,0]
+joon=pygame.Rect(20,20,100,100)
+pygame.draw.line(ekraani_pind,kollane,(10,10),(10,100),5)
+
+
+
+polygon=pygame.Rect(-10,-10,90,90)
+pygame.draw.ellipse(ekraani_pind,(255,255,51),polygon)
+
+
 
 #joon
 orange=[255,144,0]
 joon=pygame.Rect(242,0,100,100)
 pygame.draw.line(ekraani_pind,orange,(222,150),(285,150),4)
+
 
 whithe=[255,255,255]
 joon=pygame.Rect(232,185,100,100)
