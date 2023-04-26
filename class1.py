@@ -14,9 +14,7 @@ def Päripäev(): #По часовой
         sammX, sammY = 0, -1
     posX += sammX
     posY += sammY
-    ekraan.blit(pilt, (posX, posY))
-    pygame.display.flip()
-    pygame.time.delay(10)
+
 
 def Vastupäev(): #Против часовой
     if posY <= 0 and posX >= ekraan.get_width() - pilt.get_width():
@@ -33,9 +31,7 @@ def Vastupäev(): #Против часовой
         sammY = 2
     posX += sammX
     posY += sammY
-    ekraan.blit(pilt, (posX, posY))
-    pygame.display.flip()
-    pygame.time.delay(10)
+
 
 def R():#Оталкивается от кроёв
     if posY <= 0:
@@ -52,20 +48,16 @@ def R():#Оталкивается от кроёв
         sammY = random.choice([-2, -1, 1, 2])
     posX += sammX
     posY += sammY
-    ekraan.blit(pilt, (posX, posY))
-    pygame.display.flip()
-    pygame.time.delay(10)
 
-def y():#в вверх  в низ
+
+def down():#в вверх  в низ
     if posY <= 0:
         sammY = 2
     elif posY >= ekraan.get_height() - pilt.get_height():
         sammY = -2
     posX += sammX
     posY += sammY
-    ekraan.blit(pilt, (posX, posY))
-    pygame.display.flip()
-    pygame.time.delay(10)
+
 
 
 
@@ -87,15 +79,19 @@ lõpp=False
 
 kell=pygame.time.Clock()
 
-v=[Päripäev,Vastupäev,R,y]
+v=[Päripäev,Vastupäev,R,down]
 
-while  not lõpp:
+lõpp = False
+kell = pygame.time.Clock()
+k= [Päripäev, Vastupäev, R, down]
+k_list=v
+while not lõpp:
     kell.tick(120)
-    events=pygame.event.get()
+    events = pygame.event.get()
     for i in pygame.event.get():       
-        if i.type==pygame.QUIT:
-                lõpp=True
-        funktsioon=random.shuffel(v)           
+        if i.type == pygame.QUIT:
+            lõpp = True
+    random.choice(v)()
     ekraan.blit(pilt, (posX, posY))
     pygame.display.flip()
     pygame.time.delay(10)
