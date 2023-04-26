@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1dcd1d9-647c-4e25-addd-b17cfa33a600</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Game_ulesane2.py</StartupFile>
+    <StartupFile>class1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="animeremine.py" />
+    <Compile Include="class1.py" />
     <Compile Include="Game.py">
       <SubType>Code</SubType>
     </Compile>
