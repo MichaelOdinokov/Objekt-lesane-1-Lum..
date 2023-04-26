@@ -4,6 +4,7 @@ from random import*
 import random
 
 def Päripäev(): #По часовой
+    global posX, posY, sammX, sammY
     if posX == X - pilt.get_rect().width and posY == Y - pilt.get_rect().height:
         sammX, sammY = -1, 0
     elif posX == X - pilt.get_rect().width and posY == 0:
@@ -14,9 +15,13 @@ def Päripäev(): #По часовой
         sammX, sammY = 0, -1
     posX += sammX
     posY += sammY
+    ekraan.blit(pilt, (posX, posY))
+    pygame.display.flip()
+    pygame.time.delay(10)
 
 
 def Vastupäev(): #Против часовой
+    global posX, posY, sammX, sammY
     if posY <= 0 and posX >= ekraan.get_width() - pilt.get_width():
         sammX = -2
         sammY = 0
@@ -31,9 +36,13 @@ def Vastupäev(): #Против часовой
         sammY = 2
     posX += sammX
     posY += sammY
+    ekraan.blit(pilt, (posX, posY))
+    pygame.display.flip()
+    pygame.time.delay(10)
 
 
 def R():#Оталкивается от кроёв
+    global posX, posY, sammX, sammY
     if posY <= 0:
         sammX = random.choice([-2, -1, 1, 2])
         sammY = random.choice([1, 2])
@@ -48,15 +57,22 @@ def R():#Оталкивается от кроёв
         sammY = random.choice([-2, -1, 1, 2])
     posX += sammX
     posY += sammY
+    ekraan.blit(pilt, (posX, posY))
+    pygame.display.flip()
+    pygame.time.delay(10)
 
 
 def down():#в вверх  в низ
+    global posX, posY, sammX, sammY
     if posY <= 0:
         sammY = 2
     elif posY >= ekraan.get_height() - pilt.get_height():
         sammY = -2
     posX += sammX
     posY += sammY
+    ekraan.blit(pilt, (posX, posY))
+    pygame.display.flip()
+    pygame.time.delay(10)
 
 
 
@@ -79,19 +95,16 @@ lõpp=False
 
 kell=pygame.time.Clock()
 
-v=[Päripäev,Vastupäev,R,down]
 
-lõpp = False
-kell = pygame.time.Clock()
-k= [Päripäev, Vastupäev, R, down]
-k_list=v
+lõpp=False
+kell=pygame.time.Clock()
+v=[Päripäev, Vastupäev,R ,down]
 while not lõpp:
-    kell.tick(120)
+    kell.tick(60)
     events = pygame.event.get()
     for i in pygame.event.get():       
         if i.type == pygame.QUIT:
             lõpp = True
-    random.choice(v)()
-    ekraan.blit(pilt, (posX, posY))
-    pygame.display.flip()
-    pygame.time.delay(10)
+    random.choice(v)
+    ekraan.fill(fon)
+pygame.quit()
