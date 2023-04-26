@@ -87,7 +87,7 @@ fon = (100, 255, 100)
 ekraan.fill(fon)
 
 # Загружаем картинку
-pilt = pygame.image.load("pika2.png")
+pilt=pygame.image.load("pika2.png")
 posX, posY = X - pilt.get_rect().width, Y - pilt.get_rect().height
 sammX, sammY = 0, 0
 
@@ -105,6 +105,6 @@ while not lõpp:
     for i in pygame.event.get():       
         if i.type == pygame.QUIT:
             lõpp = True
-    random.choice(v)
+    random.choice(v)()
     ekraan.fill(fon)
 pygame.quit()
