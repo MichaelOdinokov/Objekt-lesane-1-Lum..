@@ -30,12 +30,13 @@
     <Compile Include="osa_2maja.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="12.png" />
     <Content Include="B.png" />
-    <Content Include="Monkey.png" />
+    <Content Include="kala.png" />
+    <Content Include="mere.png" />
     <Content Include="O.png" />
     <Content Include="pika.png" />
     <Content Include="pika2.png" />
+    <Content Include="shark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
