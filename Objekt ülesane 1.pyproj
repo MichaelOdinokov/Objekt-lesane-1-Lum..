@@ -37,6 +37,7 @@
     <Content Include="O.png" />
     <Content Include="pika.png" />
     <Content Include="pika2.png" />
+    <Content Include="Results.txt" />
     <Content Include="shark.png" />
     <Content Include="õuna.png" />
   </ItemGroup>

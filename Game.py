@@ -23,6 +23,7 @@ ekraan.blit(mau, (posX, posY))
 pygame.display.flip()
 pygame.time.delay(10)
 
+kell=pygame.time.Clock()
 # õuna
 õuna=pygame.image.load("õuna.png")
 posX1, posY1=X-õuna.get_rect().width, Y-õuna.get_rect().height
@@ -33,7 +34,9 @@ if posY <= 0:
 elif posY >= ekraan.get_height() - õuna.get_height():
     sammY = -2
 
+
 # Koldõuna
+kell.tick(160)
 kõuna=pygame.image.load("kõuna.png")
 posX2, posY2=X-õuna.get_rect().width, Y-kõuna.get_rect().height
 samm=5
@@ -43,6 +46,7 @@ if posY <= 0:
 elif posY >= ekraan.get_height() - kõuna.get_height():
     sammY = -2
 
+# Muutaja
 
 
 kell=pygame.time.Clock()
@@ -63,8 +67,6 @@ while True:
         posY -= samm
     elif keys[pygame.K_DOWN]:
         posY += samm
-    
-   
     ekraan.blit(mau, (posX, posY))
     ekraan.blit(õuna, (posX1, posY1))
     ekraan.blit(kõuna, (posX2, posY2))
