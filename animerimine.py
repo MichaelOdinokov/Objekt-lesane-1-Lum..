@@ -98,7 +98,7 @@ kell=pygame.time.Clock()
 
 lõpp=False
 kell=pygame.time.Clock()
-v=[Päripäev, Vastupäev,R ,down]
+v=[Päripäev, Vastupäev]
 while not lõpp:
     kell.tick(60)
     events = pygame.event.get()
