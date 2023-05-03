@@ -1,1 +1,8 @@
+Player: f
+Play time: 13.001901626586914 seconds
+Score: 6
+
+Player: d
+Play time: 13.013988018035889 seconds
+Score: 83
 
